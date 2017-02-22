@@ -9,20 +9,20 @@ public class CartTest {
     @Test
     public void shouldReturnTotalPriceAs5400IfSumOfProductPricesIs5400() {
         Cart cart=new Cart();
-        cart.addItem(new MicrowaveOven(Category.ELECTRONICS,"Microwave Oven",3400));
-        cart.addItem(new VaccumCleaner(Category.ELECTRONICS,"Vaccum cleaner",2000));
+        cart.addItem(new Product(Category.ELECTRONICS,"Microwave Oven",3400));
+        cart.addItem(new Product(Category.ELECTRONICS,"Vaccum cleaner",2000));
         assertTrue(5400==cart.getTotalPrice());
     }
     @Test
     public void shouldNotReturnTotalPriceAs400IfSumOfProductPricesIs400() {
         Cart cart=new Cart();
-        cart.addItem(new MicrowaveOven(Category.ELECTRONICS,"Microwave Oven",3400));
-        cart.addItem(new VaccumCleaner(Category.ELECTRONICS,"Vaccum cleaner",2000));
+        cart.addItem(new Product(Category.ELECTRONICS,"Microwave Oven",3400));
+        cart.addItem(new Product(Category.ELECTRONICS,"Vaccum cleaner",2000));
         assertFalse(400==cart.getTotalPrice());
     }
     @Test
     public void shouldReturnAllProductDetailsOnCallingShowItems() {
-        MicrowaveOven dummy=mock(MicrowaveOven.class);
+        Product dummy=mock(Product.class);
         Cart cart=new Cart();
         cart.addItem(dummy);
         cart.showItems();

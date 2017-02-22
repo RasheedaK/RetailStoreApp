@@ -9,7 +9,7 @@ public class RetailStoreAppTest {
     @Test
     public void shouldDisplayAllProductsOnCallingDisplayProducts() {
         RetailStoreApp retailStoreApp = new RetailStoreApp();
-        Product vaccumCleaner = new VaccumCleaner(Category.ELECTRONICS, "Vaccum Cleaner", 3000);
+        Product vaccumCleaner = new Product(Category.ELECTRONICS, "Vaccum Cleaner", 3000);
         retailStoreApp.addProduct(vaccumCleaner);
         String expectedString = "Vaccum Cleaner\n";
         assertEquals(expectedString, retailStoreApp.displayProducts());
@@ -18,14 +18,14 @@ public class RetailStoreAppTest {
     @Test
     public void shouldDisplaySuccesfullMessageOnCallingAddProduct() {
         RetailStoreApp retailStoreApp = new RetailStoreApp();
-        Product vaccumCleaner = new VaccumCleaner(Category.ELECTRONICS, "Vaccum Cleaner", 3000);
+        Product vaccumCleaner = new Product(Category.ELECTRONICS, "Vaccum Cleaner", 3000);
         String expectedString = "Successfully Added To Store";
         assertEquals(expectedString, retailStoreApp.addProduct(vaccumCleaner));
     }
 
     @Test
     public void shouldDisplayProductDetailsOnCallingDisplayProductDetails() {
-        VaccumCleaner vaccumCleaner = new VaccumCleaner(Category.ELECTRONICS, "Vaccum Cleaner", 3400);
+        Product vaccumCleaner = new Product(Category.ELECTRONICS, "Vaccum Cleaner", 3400);
         RetailStoreApp retailStoreApp = new RetailStoreApp();
         retailStoreApp.addProduct(vaccumCleaner);
         String actualString = retailStoreApp.getProductDetails("Vaccum Cleaner");
@@ -34,7 +34,7 @@ public class RetailStoreAppTest {
 
     @Test
     public void shouldDisplaySuccessfullMessageOnCallingAddItemToCart() {
-        VaccumCleaner vaccumCleaner = new VaccumCleaner(Category.ELECTRONICS, "Vaccum Cleaner", 3400);
+        Product vaccumCleaner = new Product(Category.ELECTRONICS, "Vaccum Cleaner", 3400);
         RetailStoreApp retailStoreApp = new RetailStoreApp();
         retailStoreApp.addProduct(vaccumCleaner);
         String actualString = retailStoreApp.addItemToCart(vaccumCleaner);
@@ -43,7 +43,7 @@ public class RetailStoreAppTest {
 
     @Test
     public void shouldNotDisplaySuccessfullMessageOnCallingAddItemToCartIfProductIsNotInStore() {
-        VaccumCleaner vaccumCleaner = new VaccumCleaner(Category.ELECTRONICS, "Vaccum Cleaner", 3400);
+        Product vaccumCleaner = new Product(Category.ELECTRONICS, "Vaccum Cleaner", 3400);
         RetailStoreApp retailStoreApp = new RetailStoreApp();
         String actualString = retailStoreApp.addItemToCart(vaccumCleaner);
         assertNotEquals("Item Successfully Added", actualString);
@@ -51,7 +51,7 @@ public class RetailStoreAppTest {
 
     @Test
     public void shouldDisplaySuccessfullMessageOnCallingDeleteItemFromCart() {
-        VaccumCleaner vaccumCleaner = new VaccumCleaner(Category.ELECTRONICS, "Vaccum Cleaner", 3400);
+        Product vaccumCleaner = new Product(Category.ELECTRONICS, "Vaccum Cleaner", 3400);
         RetailStoreApp retailStoreApp = new RetailStoreApp();
         retailStoreApp.addProduct(vaccumCleaner);
         retailStoreApp.addItemToCart(vaccumCleaner);
@@ -61,7 +61,7 @@ public class RetailStoreAppTest {
 
     @Test
     public void shouldNotDisplaySuccessfullMessageOnCallingDeleteItemFromCartIfItemIsNotAdded() {
-        VaccumCleaner vaccumCleaner = new VaccumCleaner(Category.ELECTRONICS, "Vaccum Cleaner", 3400);
+        Product vaccumCleaner = new Product(Category.ELECTRONICS, "Vaccum Cleaner", 3400);
         RetailStoreApp retailStoreApp = new RetailStoreApp();
         retailStoreApp.addProduct(vaccumCleaner);
         String actualString = retailStoreApp.removeItemFromCart(vaccumCleaner);

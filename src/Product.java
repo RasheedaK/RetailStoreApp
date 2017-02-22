@@ -1,4 +1,4 @@
-public abstract class Product {
+public class Product {
     private Category category;
     private String name;
     private double price;
@@ -14,15 +14,11 @@ public abstract class Product {
     }
 
     String getDetails() {
-        return toString();
+        return "Category:" + category + "\nName:" + name + "\nPrice:" + price;
     }
 
     double getPrice() {
         return this.price;
     }
 
-    @Override
-    public String toString() {
-        return "Category:" + category + "\nName:" + name + "\nPrice:" + price;
-    }
 }
