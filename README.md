@@ -1,12 +1,12 @@
 A retail store is trying to come up with a mobile app for its customers that can help customers browse products and create a cart with products that they wish to purchase.<br/>
 List of products should be available in the app. The products available in app are:<br/>
-     Product                Category<br/>
-     Microwave oven        Electronics<br/>
-     Television            Electronics<br/>
-     Vacuum Cleaner        Electronics<br/>
-     Table                  Furniture<br/>
-     Chair                  Furniture<br/>
-     Almirah                Furniture<br/>
+     Product-Category<br/>
+     Microwave oven        -Electronics<br/>
+     Television            -Electronics<br/>
+     Vacuum Cleaner        -Electronics<br/>
+     Table                  -Furniture<br/>
+     Chair                  -Furniture<br/>
+     Almirah                -Furniture<br/>
 As part of initial release, the app should have the following features:<br/>
 1. User should be able to view list of products grouped by categories.<br/>
 2. User should be able to view details by selecting a product from list.<br/>
