@@ -1,5 +1,5 @@
-/**
- * Created by krashee on 06/2017.
- */
-public class Television {
+public class Television extends Product{
+    public Television(Category category, String name, double price) {
+        super(category, name, price);
+    }
 }
