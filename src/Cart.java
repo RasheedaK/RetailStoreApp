@@ -34,4 +34,8 @@ public class Cart {
         }
         return addedItems;
     }
+
+    boolean hasProduct(Product product) {
+        return items.contains(product);
+    }
 }

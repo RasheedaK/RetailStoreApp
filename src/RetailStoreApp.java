@@ -55,4 +55,14 @@ class RetailStoreApp {
     private boolean hasProduct(Product product) {
         return products.contains(product);
     }
+
+    String removeItemFromCart(Product product) {
+        if (cart.hasProduct(product)) {
+            cart.removeItem(product);
+            return "Item Successfully Removed";
+        }
+        else{
+            return "Item not in cart";
+        }
+    }
 }
