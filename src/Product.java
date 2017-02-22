@@ -9,7 +9,7 @@ public abstract class Product {
         this.price = price;
     }
 
-    public String getName() {
+    String getName() {
         return name;
     }
 
@@ -23,10 +23,6 @@ public abstract class Product {
 
     @Override
     public String toString() {
-        return "Product{" +
-                "category=" + category +
-                ", name='" + name + '\'' +
-                ", price=" + price +
-                '}';
+        return "Category:" + category + "\nName:" + name + "\nPrice:" + price;
     }
 }

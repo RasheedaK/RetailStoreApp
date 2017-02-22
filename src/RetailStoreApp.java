@@ -23,4 +23,22 @@ class RetailStoreApp {
         }
         return productsInStore;
     }
+
+    String getProductDetails(String productName) {
+        String output="";
+        output = searchProduct(productName, output);
+        return output;
+    }
+
+    private String searchProduct(String productName, String output) {
+        for (Product product:products) {
+            if(product.getName().equalsIgnoreCase(productName)){
+                output+=product.getDetails();
+            }
+            else{
+                output+="Product Not Found";
+            }
+        }
+        return output;
+    }
 }
