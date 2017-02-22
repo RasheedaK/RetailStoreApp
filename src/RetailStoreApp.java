@@ -41,4 +41,18 @@ class RetailStoreApp {
         }
         return output;
     }
+
+    String addItemToCart(Product product) {
+        if(hasProduct(product)){
+            cart.addItem(product);
+            return "Item Successfully Added";
+        }
+        else{
+            return "Item not found";
+        }
+    }
+
+    private boolean hasProduct(Product product) {
+        return products.contains(product);
+    }
 }

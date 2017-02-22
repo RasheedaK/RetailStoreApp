@@ -22,10 +22,18 @@ public class RetailStoreAppTest {
     }
     @Test
     public void shouldDisplayProductDetailsOnCallingDisplayProductDetails() {
-        VaccumCleaner dummy=new VaccumCleaner(Category.ELECTRONICS,"Vaccum Cleaner",3400);
+        VaccumCleaner vaccumCleaner=new VaccumCleaner(Category.ELECTRONICS,"Vaccum Cleaner",3400);
         RetailStoreApp retailStoreApp=new RetailStoreApp();
-        retailStoreApp.addProduct(dummy);
+        retailStoreApp.addProduct(vaccumCleaner);
         String actualString=retailStoreApp.getProductDetails("Vaccum Cleaner");
         assertEquals("Category:ELECTRONICS\nName:Vaccum Cleaner\nPrice:3400.0",actualString);
+    }
+    @Test
+    public void shouldDisplaySuccessfullMessageOnCallingAddItemToCart() {
+        VaccumCleaner vaccumCleaner=new VaccumCleaner(Category.ELECTRONICS,"Vaccum Cleaner",3400);
+        RetailStoreApp retailStoreApp=new RetailStoreApp();
+        retailStoreApp.addProduct(vaccumCleaner);
+        String actualString=retailStoreApp.addItemToCart(vaccumCleaner);
+        assertEquals("Item Successfully Added",actualString);
     }
 }
