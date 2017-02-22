@@ -26,4 +26,12 @@ public class Cart {
         }
         return sum;
     }
+
+    String showItems() {
+        String addedItems="";
+        for (Product product:items) {
+            addedItems+=product.getDetails();
+        }
+        return addedItems;
+    }
 }
