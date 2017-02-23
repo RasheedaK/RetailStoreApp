@@ -3,6 +3,7 @@ import java.util.List;
 
 public class Cart {
     private final List<Product> items;
+    private final String EMPTY_CART = "Cart Is Empty"
 
     public Cart() {
         items = new ArrayList<>();
@@ -28,10 +29,10 @@ public class Cart {
         String addedItems = "";
         if (!isEmpty()) {
             for (Product product : items) {
-                addedItems += product.getName();
+                addedItems += product.getName() + "\n";
             }
         } else
-            addedItems += "Cart Is Empty";
+            addedItems += EMPTY_CART;
         return addedItems;
     }
 

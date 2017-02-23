@@ -16,51 +16,51 @@ public class RetailStoreAppTest {
     }
 
     @Test
-    public void shouldDisplaySuccesfullMessageOnCallingAddProduct() {
+    public void shouldDisplaySuccessfulMessageOnCallingAddProduct() {
         RetailStoreApp retailStoreApp = new RetailStoreApp();
-        Product vaccumCleaner = new Product(Category.ELECTRONICS, "Vaccum Cleaner", 3000);
+        Product vacuumCleaner = new Product(Category.ELECTRONICS, "Vaccum Cleaner", 3000);
         String expectedString = "Successfully Added To Store";
-        assertEquals(expectedString, retailStoreApp.addProduct(vaccumCleaner));
+        assertEquals(expectedString, retailStoreApp.addProduct(vacuumCleaner));
     }
 
     @Test
     public void shouldDisplayProductDetailsOnCallingDisplayProductDetails() {
-        Product vaccumCleaner = new Product(Category.ELECTRONICS, "Vaccum Cleaner", 3400);
+        Product vacuumCleaner = new Product(Category.ELECTRONICS, "Vaccum Cleaner", 3400);
         RetailStoreApp retailStoreApp = new RetailStoreApp();
-        retailStoreApp.addProduct(vaccumCleaner);
+        retailStoreApp.addProduct(vacuumCleaner);
         String actualString = retailStoreApp.displayProductDetails("Vaccum Cleaner");
         assertEquals("Category:ELECTRONICS\nName:Vaccum Cleaner\nPrice:3400.0", actualString);
     }
 
     @Test
-    public void shouldDisplaySuccessfullMessageOnCallingAddItemToCart() {
-        Product vaccumCleaner = new Product(Category.ELECTRONICS, "Vaccum Cleaner", 3400);
+    public void shouldDisplaySuccessfulMessageOnCallingAddItemToCart() {
+        Product vacuumCleaner = new Product(Category.ELECTRONICS, "Vaccum Cleaner", 3400);
         RetailStoreApp retailStoreApp = new RetailStoreApp();
-        retailStoreApp.addProduct(vaccumCleaner);
-        String actualString = retailStoreApp.addItemToCart(vaccumCleaner);
-        assertEquals("Item Successfully Added", actualString);
+        retailStoreApp.addProduct(vacuumCleaner);
+        String actualString = retailStoreApp.addItemToCart(vacuumCleaner);
+        assertEquals("Item Successfully Added to Cart", actualString);
     }
 
     @Test
-    public void shouldNotDisplaySuccessfullMessageOnCallingAddItemToCartIfProductIsNotInStore() {
-        Product vaccumCleaner = new Product(Category.ELECTRONICS, "Vaccum Cleaner", 3400);
+    public void shouldNotDisplaySuccessfulMessageOnCallingAddItemToCartIfProductIsNotInStore() {
+        Product vacuumCleaner = new Product(Category.ELECTRONICS, "Vaccum Cleaner", 3400);
         RetailStoreApp retailStoreApp = new RetailStoreApp();
-        String actualString = retailStoreApp.addItemToCart(vaccumCleaner);
+        String actualString = retailStoreApp.addItemToCart(vacuumCleaner);
         assertNotEquals("Item Successfully Added", actualString);
     }
 
     @Test
-    public void shouldDisplaySuccessfullMessageOnCallingDeleteItemFromCart() {
-        Product vaccumCleaner = new Product(Category.ELECTRONICS, "Vaccum Cleaner", 3400);
+    public void shouldDisplaySuccessfulMessageOnCallingDeleteItemFromCart() {
+        Product vacuumCleaner = new Product(Category.ELECTRONICS, "Vaccum Cleaner", 3400);
         RetailStoreApp retailStoreApp = new RetailStoreApp();
-        retailStoreApp.addProduct(vaccumCleaner);
-        retailStoreApp.addItemToCart(vaccumCleaner);
-        String actualString = retailStoreApp.removeItemFromCart(vaccumCleaner);
+        retailStoreApp.addProduct(vacuumCleaner);
+        retailStoreApp.addItemToCart(vacuumCleaner);
+        String actualString = retailStoreApp.removeItemFromCart(vacuumCleaner);
         assertEquals("Item Successfully Removed", actualString);
     }
 
     @Test
-    public void shouldNotDisplaySuccessfullMessageOnCallingDeleteItemFromCartIfItemIsNotAdded() {
+    public void shouldNotDisplaySuccessfulMessageOnCallingDeleteItemFromCartIfItemIsNotAdded() {
         Product vaccumCleaner = new Product(Category.ELECTRONICS, "Vaccum Cleaner", 3400);
         RetailStoreApp retailStoreApp = new RetailStoreApp();
         retailStoreApp.addProduct(vaccumCleaner);
