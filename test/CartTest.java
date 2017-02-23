@@ -34,33 +34,37 @@ public class CartTest {
         String expectedString = "Cart Is Empty";
         assertEquals(expectedString, cart.showItems());
     }
+
     @Test
     public void shouldRemoveVaccumCleanerFromTheCartOnCallinRemoveItem() {
-        Cart cart=new Cart();
-        Product vaccumCleaner=new Product(Category.ELECTRONICS,"Vacuum Cleaner",4000);
+        Cart cart = new Cart();
+        Product vaccumCleaner = new Product(Category.ELECTRONICS, "Vacuum Cleaner", 4000);
         cart.addItem(vaccumCleaner);
-        Product vacuumCleaner1=new Product(Category.ELECTRONICS,"Vacuum Cleaner",4000);
+        Product vacuumCleaner1 = new Product(Category.ELECTRONICS, "Vacuum Cleaner", 4000);
         cart.removeItem(vacuumCleaner1);
         assertFalse(cart.hasProduct(vaccumCleaner));
     }
+
     @Test
     public void shouldReturnTrueIfCartHasVaccumCleaneOnCallinhasProductOnVacuumCleaner() {
-        Cart cart=new Cart();
-        Product vaccumCleaner=new Product(Category.ELECTRONICS,"Vacuum Cleaner",4000);
+        Cart cart = new Cart();
+        Product vaccumCleaner = new Product(Category.ELECTRONICS, "Vacuum Cleaner", 4000);
         cart.addItem(vaccumCleaner);
-        Product vacuumCleaner1=new Product(Category.ELECTRONICS,"Vacuum Cleaner",4000);
+        Product vacuumCleaner1 = new Product(Category.ELECTRONICS, "Vacuum Cleaner", 4000);
         assertTrue(cart.hasProduct(vacuumCleaner1));
     }
+
     @Test
     public void shouldAddItemToCartOnCallingAddItem() {
-        Cart cart=new Cart();
+        Cart cart = new Cart();
         Product chair = new Product(Category.FURNITURE, "Chair", 2000);
         cart.addItem(chair);
         assertTrue(cart.hasProduct(chair));
     }
+
     @Test
     public void shouldRemoveItemToCartOnCallingRemoveItem() {
-        Cart cart=new Cart();
+        Cart cart = new Cart();
         Product chair = new Product(Category.FURNITURE, "Chair", 2000);
         cart.removeItem(chair);
         assertFalse(cart.hasProduct(chair));

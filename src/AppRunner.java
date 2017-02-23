@@ -11,20 +11,20 @@ public class AppRunner {
     }
 
     void run(int userOption) {
-        switch (userOption){
-            case DISPLAY_PRODUCTS:{
+        switch (userOption) {
+            case DISPLAY_PRODUCTS: {
                 retailStoreApp.displayProducts();
             }
-            case DISPLAY_PRODUCT_DETAILS:{
+            case DISPLAY_PRODUCT_DETAILS: {
                 retailStoreApp.displayProductDetails("Vacuum Cleaner");
             }
-            case ADD_ITEM_TO_CART:{
-                retailStoreApp.addItemToCart(new Product(Category.ELECTRONICS,"Tv",20000));
+            case ADD_ITEM_TO_CART: {
+                retailStoreApp.addItemToCart(new Product(Category.ELECTRONICS, "Tv", 20000));
             }
-            case REMOVE_ITEM_FROM_CART:{
-                retailStoreApp.removeItemFromCart(new Product(Category.ELECTRONICS,"Tv",20000));
+            case REMOVE_ITEM_FROM_CART: {
+                retailStoreApp.removeItemFromCart(new Product(Category.ELECTRONICS, "Tv", 20000));
             }
-            case VIEW_CART:{
+            case VIEW_CART: {
                 retailStoreApp.viewCart();
             }
         }

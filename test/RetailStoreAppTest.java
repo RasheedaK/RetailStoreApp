@@ -10,9 +10,9 @@ public class RetailStoreAppTest {
     public void shouldDisplayAllCategoryWiseProductsOnCallingDisplayProducts() {
         RetailStoreApp retailStoreApp = initializeRetailStore();
         List<String> products = retailStoreApp.displayProducts();
-        assertEquals(2,products.size());
-        assertEquals("Vacuum Cleaner\nTelevision\n",products.get(0));
-        assertEquals("Chair\nTable\n",products.get(1));
+        assertEquals(2, products.size());
+        assertEquals("Vacuum Cleaner\nTelevision\n", products.get(0));
+        assertEquals("Chair\nTable\n", products.get(1));
     }
 
     @Test
@@ -77,12 +77,13 @@ public class RetailStoreAppTest {
         String expectedString = "Vacuum Cleaner";
         assertEquals(expectedString, retailStoreApp.viewCart());
     }
+
     private RetailStoreApp initializeRetailStore() {
         RetailStoreApp retailStoreApp = new RetailStoreApp();
         Product vacuumCleaner = new Product(Category.ELECTRONICS, "Vacuum Cleaner", 3000);
-        Product chair=new Product(Category.FURNITURE,"Chair",400);
-        Product television=new Product(Category.ELECTRONICS,"Television",20000);
-        Product table=new Product(Category.FURNITURE,"Table",1000);
+        Product chair = new Product(Category.FURNITURE, "Chair", 400);
+        Product television = new Product(Category.ELECTRONICS, "Television", 20000);
+        Product table = new Product(Category.FURNITURE, "Table", 1000);
         retailStoreApp.addProduct(vacuumCleaner);
         retailStoreApp.addProduct(chair);
         retailStoreApp.addProduct(television);

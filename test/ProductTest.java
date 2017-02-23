@@ -37,11 +37,13 @@ public class ProductTest {
         double expectedPrice = 400.0;
         assertNotEquals(expectedPrice, product.getPrice(), 0.1);
     }
+
     @Test
     public void shouldReturnTrueIfProductIsChairAndCheckedAgainstFurniture() {
         Product chair = new Product(Category.FURNITURE, "Chair", 400);
         assertTrue(chair.isSameCategory(Category.FURNITURE));
     }
+
     @Test
     public void shouldReturnFalseIfProductIsChairAndCheckedAgainstElectronics() {
         Product chair = new Product(Category.FURNITURE, "Chair", 400);

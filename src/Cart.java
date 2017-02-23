@@ -29,7 +29,7 @@ public class Cart {
         String addedItems = "";
         if (!isEmpty()) {
             for (Product product : items) {
-                addedItems += product.getName()+"\t"+product.getPrice()+ "\n";
+                addedItems += product.getName() + "\t" + product.getPrice() + "\n";
             }
         } else
             addedItems += EMPTY_CART;
