@@ -66,4 +66,13 @@ public class RetailStoreAppTest {
         String actualString = retailStoreApp.removeItemFromCart(vaccumCleaner);
         assertNotEquals("Item Successfully Removed", actualString);
     }
+    @Test
+    public void shouldDisplayProductsInCartOnCallingViewCart() {
+        Product vacuumCleaner = new Product(Category.ELECTRONICS, "Vacuum Cleaner", 3400);
+        RetailStoreApp retailStoreApp = new RetailStoreApp();
+        retailStoreApp.addProduct(vacuumCleaner);
+        retailStoreApp.addItemToCart(vacuumCleaner);
+        String expectedString="Vacuum Cleaner";
+        assertEquals(expectedString,retailStoreApp.viewCart());
+    }
 }

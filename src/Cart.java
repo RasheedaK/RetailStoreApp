@@ -26,7 +26,7 @@ public class Cart {
     String showItems() {
         String addedItems="";
         for (Product product:items) {
-            addedItems+=product.getDetails();
+            addedItems+=product.getName();
         }
         return addedItems;
     }

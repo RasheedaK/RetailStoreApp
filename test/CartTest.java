@@ -26,6 +26,6 @@ public class CartTest {
         Cart cart=new Cart();
         cart.addItem(dummy);
         cart.showItems();
-        verify(dummy,times(1)).getDetails();
+        verify(dummy,times(1)).getName();
     }
 }

@@ -63,4 +63,8 @@ class RetailStoreApp {
             return "Item not in cart";
         }
     }
+
+    String viewCart() {
+        return cart.showItems();
+    }
 }
