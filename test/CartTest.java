@@ -51,4 +51,18 @@ public class CartTest {
         Product vacuumCleaner1=new Product(Category.ELECTRONICS,"Vacuum Cleaner",4000);
         assertTrue(cart.hasProduct(vacuumCleaner1));
     }
+    @Test
+    public void shouldAddItemToCartOnCallingAddItem() {
+        Cart cart=new Cart();
+        Product chair = new Product(Category.FURNITURE, "Chair", 2000);
+        cart.addItem(chair);
+        assertTrue(cart.hasProduct(chair));
+    }
+    @Test
+    public void shouldRemoveItemToCartOnCallingRemoveItem() {
+        Cart cart=new Cart();
+        Product chair = new Product(Category.FURNITURE, "Chair", 2000);
+        cart.removeItem(chair);
+        assertFalse(cart.hasProduct(chair));
+    }
 }

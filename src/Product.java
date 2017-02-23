@@ -32,8 +32,7 @@ public class Product {
 
         Product product = (Product) o;
 
-        if (Double.compare(product.price, price) != 0) return false;
-        return category == product.category && (name != null ? name.equals(product.name) : product.name == null);
+        return Double.compare(product.price, price) == 0 && category == product.category && (name != null ? name.equals(product.name) : product.name == null);
     }
 
     @Override
