@@ -72,6 +72,6 @@ class RetailStoreApp {
     }
 
     String viewCart() {
-        return cart.showItems();
+        return cart.showItems()+"\n"+cart.getTotalPrice();
     }
 }
