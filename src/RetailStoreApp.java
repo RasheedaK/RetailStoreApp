@@ -1,5 +1,3 @@
-import org.omg.PortableInterceptor.SUCCESSFUL;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,7 +22,7 @@ class RetailStoreApp {
         return productsInStore;
     }
 
-    String getProductDetails(String productName) {
+    String displayProductDetails(String productName) {
         String output="";
         output = searchProduct(productName, output);
         return output;

@@ -1,3 +1,3 @@
 public enum Category {
-    ELECTRONICS, FURNITURE
+    ELECTRONICS,FURNITURE;
 }

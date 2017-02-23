@@ -16,10 +16,6 @@ public class Cart {
     }
 
     double getTotalPrice() {
-        return getSum();
-    }
-
-    private double getSum() {
         int sum = 0;
         for (Product product : items) {
             sum += product.getPrice();

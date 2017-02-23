@@ -2,7 +2,6 @@ import org.junit.Test;
 
 import static junit.framework.TestCase.assertEquals;
 import static org.junit.Assert.assertNotEquals;
-import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
 public class RetailStoreAppTest {
@@ -28,7 +27,7 @@ public class RetailStoreAppTest {
         Product vaccumCleaner = new Product(Category.ELECTRONICS, "Vaccum Cleaner", 3400);
         RetailStoreApp retailStoreApp = new RetailStoreApp();
         retailStoreApp.addProduct(vaccumCleaner);
-        String actualString = retailStoreApp.getProductDetails("Vaccum Cleaner");
+        String actualString = retailStoreApp.displayProductDetails("Vaccum Cleaner");
         assertEquals("Category:ELECTRONICS\nName:Vaccum Cleaner\nPrice:3400.0", actualString);
     }
 

@@ -4,9 +4,9 @@ import static org.junit.Assert.*;
 public class ProductTest {
     @Test
     public void shouldReturnProductDetailsOnCallingGetDetails() {
-        Product product=new Product(Category.ELECTRONICS, "Vaccum Cleaner", 3400);
+        Product vacuumCleaner=new Product(Category.ELECTRONICS, "Vaccum Cleaner", 3400);
         String expectedString="Category:ELECTRONICS\nName:Vaccum Cleaner\nPrice:3400.0";
-        assertEquals(expectedString,product.getDetails());
+        assertEquals(expectedString,vacuumCleaner.getDetails());
     }
     @Test
     public void shouldReturnNameAsVacuumCleanerIfProductNameIsVacuumCleaner() {
