@@ -34,4 +34,21 @@ public class CartTest {
         String expectedString = "Cart Is Empty";
         assertEquals(expectedString, cart.showItems());
     }
+    @Test
+    public void shouldRemoveVaccumCleanerFromTheCartOnCallinRemoveItem() {
+        Cart cart=new Cart();
+        Product vaccumCleaner=new Product(Category.ELECTRONICS,"Vacuum Cleaner",4000);
+        cart.addItem(vaccumCleaner);
+        Product vacuumCleaner1=new Product(Category.ELECTRONICS,"Vacuum Cleaner",4000);
+        cart.removeItem(vacuumCleaner1);
+        assertFalse(cart.hasProduct(vaccumCleaner));
+    }
+    @Test
+    public void shouldReturnTrueIfCartHasVaccumCleaneOnCallinhasProductOnVacuumCleaner() {
+        Cart cart=new Cart();
+        Product vaccumCleaner=new Product(Category.ELECTRONICS,"Vacuum Cleaner",4000);
+        cart.addItem(vaccumCleaner);
+        Product vacuumCleaner1=new Product(Category.ELECTRONICS,"Vacuum Cleaner",4000);
+        assertTrue(cart.hasProduct(vacuumCleaner1));
+    }
 }

@@ -3,7 +3,7 @@ import java.util.List;
 
 public class Cart {
     private final List<Product> items;
-    private final String EMPTY_CART = "Cart Is Empty"
+    private final String EMPTY_CART = "Cart Is Empty";
 
     public Cart() {
         items = new ArrayList<>();
@@ -43,4 +43,5 @@ public class Cart {
     private boolean isEmpty() {
         return items.size() == 0;
     }
+
 }
