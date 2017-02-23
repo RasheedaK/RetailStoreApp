@@ -3,6 +3,7 @@ import java.util.List;
 
 public class Cart {
     private final List<Product> items;
+    private boolean empty;
 
     public Cart() {
         items = new ArrayList<>();
@@ -11,6 +12,7 @@ public class Cart {
     void addItem(Product product) {
         items.add(product);
     }
+
     void removeItem(Product product) {
         items.remove(product);
     }
@@ -24,14 +26,21 @@ public class Cart {
     }
 
     String showItems() {
-        String addedItems="";
-        for (Product product:items) {
-            addedItems+=product.getName();
-        }
+        String addedItems = "";
+        if (!isEmpty()) {
+            for (Product product : items) {
+                addedItems += product.getName();
+            }
+        } else
+            addedItems += "Cart Is Empty";
         return addedItems;
     }
 
     boolean hasProduct(Product product) {
         return items.contains(product);
+    }
+
+    private boolean isEmpty() {
+        return items.size() == 0;
     }
 }
