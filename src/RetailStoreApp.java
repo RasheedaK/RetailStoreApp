@@ -4,7 +4,11 @@ import java.util.List;
 class RetailStoreApp {
     private Cart cart;
     private List<Product> products;
-
+    private final String SUCCESSFULL_ADDITION= "Successfully Added To Store";
+    private final String SUCCESSFULL_ADDITION_TO_CART= "Item Successfully Added to Cart";
+    private final String SUCCESSFULL_REMOVAL_FROM_CART="Item Successfully Removed";
+    private final String PRODUCT_NOT_FOUND="Product Not Found";
+    private final String PRODUCT_NOT_IN_CART="Item Not found in cart";
     RetailStoreApp() {
         this.products = new ArrayList<>();
         this.cart = new Cart();
@@ -12,7 +16,7 @@ class RetailStoreApp {
 
     String addProduct(Product product) {
         products.add(product);
-        return "Successfully Added To Store";
+        return SUCCESSFULL_ADDITION;
     }
 
     List<String> displayProducts() {
@@ -34,27 +38,24 @@ class RetailStoreApp {
     }
 
     String displayProductDetails(String productName) {
-        String output = "";
-        return searchProduct(productName, output);
+        return searchProduct(productName);
     }
 
-    private String searchProduct(String productName, String output) {
+    private String searchProduct(String productName) {
         for (Product product : products) {
             if (product.getName().equalsIgnoreCase(productName)) {
-                output += product.getDetails();
-            } else {
-                output += "Product Not Found";
+                return product.getDetails();
             }
         }
-        return output;
+        return PRODUCT_NOT_FOUND;
     }
 
     String addItemToCart(Product product) {
         if (hasProduct(product)) {
             cart.addItem(product);
-            return "Item Successfully Added";
+            return SUCCESSFULL_ADDITION_TO_CART;
         } else {
-            return "Item not found";
+            return PRODUCT_NOT_FOUND;
         }
     }
 
@@ -65,9 +66,9 @@ class RetailStoreApp {
     String removeItemFromCart(Product product) {
         if (cart.hasProduct(product)) {
             cart.removeItem(product);
-            return "Item Successfully Removed";
+            return SUCCESSFULL_REMOVAL_FROM_CART;
         } else {
-            return "Item not in cart";
+            return PRODUCT_NOT_IN_CART;
         }
     }
 
