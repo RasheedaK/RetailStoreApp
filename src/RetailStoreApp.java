@@ -4,11 +4,12 @@ import java.util.List;
 class RetailStoreApp {
     private Cart cart;
     private List<Product> products;
-    private final String SUCCESSFULL_ADDITION= "Successfully Added To Store";
-    private final String SUCCESSFULL_ADDITION_TO_CART= "Item Successfully Added to Cart";
-    private final String SUCCESSFULL_REMOVAL_FROM_CART="Item Successfully Removed";
-    private final String PRODUCT_NOT_FOUND="Product Not Found";
-    private final String PRODUCT_NOT_IN_CART="Item Not found in cart";
+    private final String SUCCESSFULL_ADDITION = "Successfully Added To Store";
+    private final String SUCCESSFULL_ADDITION_TO_CART = "Item Successfully Added to Cart";
+    private final String SUCCESSFULL_REMOVAL_FROM_CART = "Item Successfully Removed";
+    private final String PRODUCT_NOT_FOUND = "Product Not Found";
+    private final String PRODUCT_NOT_IN_CART = "Item Not found in cart";
+
     RetailStoreApp() {
         this.products = new ArrayList<>();
         this.cart = new Cart();
@@ -20,18 +21,18 @@ class RetailStoreApp {
     }
 
     List<String> displayProducts() {
-        List<String> productsInStore=new ArrayList<>();
-        for (Category category:Category.values()) {
+        List<String> productsInStore = new ArrayList<>();
+        for (Category category : Category.values()) {
             productsInStore.add(groupProducts(category));
         }
-      return productsInStore;
+        return productsInStore;
     }
 
     private String groupProducts(Category category) {
         String groupedProducts = "";
         for (Product product : products) {
-            if(product.isSameCategory(category)) {
-                groupedProducts += product.getName()+"\n";
+            if (product.isSameCategory(category)) {
+                groupedProducts += product.getName() + "\n";
             }
         }
         return groupedProducts;
@@ -54,9 +55,8 @@ class RetailStoreApp {
         if (hasProduct(product)) {
             cart.addItem(product);
             return SUCCESSFULL_ADDITION_TO_CART;
-        } else {
-            return PRODUCT_NOT_FOUND;
         }
+        return PRODUCT_NOT_FOUND;
     }
 
     private boolean hasProduct(Product product) {
@@ -67,9 +67,8 @@ class RetailStoreApp {
         if (cart.hasProduct(product)) {
             cart.removeItem(product);
             return SUCCESSFULL_REMOVAL_FROM_CART;
-        } else {
-            return PRODUCT_NOT_IN_CART;
         }
+        return PRODUCT_NOT_IN_CART;
     }
 
     String viewCart() {
