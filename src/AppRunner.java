@@ -3,6 +3,7 @@ public class AppRunner {
     private static final int DISPLAY_PRODUCT_DETAILS = 2;
     private static final int ADD_ITEM_TO_CART = 3;
     private static final int REMOVE_ITEM_FROM_CART = 4;
+    private static final int VIEW_CART = 5;
     private final RetailStoreApp retailStoreApp;
 
     AppRunner(RetailStoreApp retailStoreApp) {
@@ -22,6 +23,9 @@ public class AppRunner {
             }
             case REMOVE_ITEM_FROM_CART:{
                 retailStoreApp.removeItemFromCart(new Product(Category.ELECTRONICS,"Tv",20000));
+            }
+            case VIEW_CART:{
+                retailStoreApp.viewCart();
             }
         }
 

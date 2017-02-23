@@ -31,4 +31,11 @@ public class AppRunnerTest {
         appRunner.run(4);
         verify(retailStoreApp,times(1)).removeItemFromCart(isA(Product.class));
     }
+    @Test
+    public void shouldCallViewCartIfUserChoosesToViewCart() {
+        RetailStoreApp retailStoreApp=mock(RetailStoreApp.class);
+        AppRunner appRunner=new AppRunner(retailStoreApp);
+        appRunner.run(5);
+        verify(retailStoreApp,times(1)).viewCart();
+    }
 }
