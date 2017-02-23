@@ -15,12 +15,22 @@ class RetailStoreApp {
         return "Successfully Added To Store";
     }
 
-    String displayProducts() {
-        String productsInStore = "";
-        for (Product product : products) {
-            productsInStore += product.getName() + '\n';
+    List<String> displayProducts() {
+        List<String> productsInStore=new ArrayList<>();
+        for (Category category:Category.values()) {
+            productsInStore.add(groupProducts(category));
         }
-        return productsInStore;
+      return productsInStore;
+    }
+
+    private String groupProducts(Category category) {
+        String groupedProducts = "";
+        for (Product product : products) {
+            if(product.isSameCategory(category)) {
+                groupedProducts += product.getName()+"\n";
+            }
+        }
+        return groupedProducts;
     }
 
     String displayProductDetails(String productName) {

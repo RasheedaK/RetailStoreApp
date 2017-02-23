@@ -21,4 +21,7 @@ public class Product {
         return this.price;
     }
 
+    boolean isSameCategory(Category category) {
+        return this.category.equals(category);
+    }
 }

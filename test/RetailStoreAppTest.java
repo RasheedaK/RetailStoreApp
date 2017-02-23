@@ -1,17 +1,18 @@
 import org.junit.Test;
 
+import java.util.List;
+
 import static junit.framework.TestCase.assertEquals;
 import static org.junit.Assert.assertNotEquals;
-import static org.mockito.Mockito.verify;
 
 public class RetailStoreAppTest {
     @Test
-    public void shouldDisplayAllProductsOnCallingDisplayProducts() {
-        RetailStoreApp retailStoreApp = new RetailStoreApp();
-        Product vaccumCleaner = new Product(Category.ELECTRONICS, "Vaccum Cleaner", 3000);
-        retailStoreApp.addProduct(vaccumCleaner);
-        String expectedString = "Vaccum Cleaner\n";
-        assertEquals(expectedString, retailStoreApp.displayProducts());
+    public void shouldDisplayAllCategoryWiseProductsOnCallingDisplayProducts() {
+        RetailStoreApp retailStoreApp = initializeRetailStore();
+        List<String> products = retailStoreApp.displayProducts();
+        assertEquals(2,products.size());
+        assertEquals("Vacuum Cleaner\nTelevision\n",products.get(0));
+        assertEquals("Chair\nTable\n",products.get(1));
     }
 
     @Test
@@ -75,5 +76,17 @@ public class RetailStoreAppTest {
         retailStoreApp.addItemToCart(vacuumCleaner);
         String expectedString = "Vacuum Cleaner";
         assertEquals(expectedString, retailStoreApp.viewCart());
+    }
+    private RetailStoreApp initializeRetailStore() {
+        RetailStoreApp retailStoreApp = new RetailStoreApp();
+        Product vacuumCleaner = new Product(Category.ELECTRONICS, "Vacuum Cleaner", 3000);
+        Product chair=new Product(Category.FURNITURE,"Chair",400);
+        Product television=new Product(Category.ELECTRONICS,"Television",20000);
+        Product table=new Product(Category.FURNITURE,"Table",1000);
+        retailStoreApp.addProduct(vacuumCleaner);
+        retailStoreApp.addProduct(chair);
+        retailStoreApp.addProduct(television);
+        retailStoreApp.addProduct(table);
+        return retailStoreApp;
     }
 }
