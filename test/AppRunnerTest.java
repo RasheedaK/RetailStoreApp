@@ -10,4 +10,11 @@ public class AppRunnerTest {
         appRunner.run(1);
         verify(retailStoreApp,times(1)).displayProducts();
     }
+    @Test
+    public void shouldCallDisplayProductDetailsIfUserChoosesToDisplayAPArticularProductDetails() {
+        RetailStoreApp retailStoreApp=mock(RetailStoreApp.class);
+        AppRunner appRunner=new AppRunner(retailStoreApp);
+        appRunner.run(2);
+        verify(retailStoreApp,times(1)).displayProductDetails(anyString());
+    }
 }
