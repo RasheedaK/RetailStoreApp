@@ -3,7 +3,7 @@ import java.util.List;
 
 class RetailStoreApp {
     private Cart cart;
-    List<Product> products;
+    private List<Product> products;
 
     RetailStoreApp() {
         this.products = new ArrayList<>();
@@ -25,8 +25,7 @@ class RetailStoreApp {
 
     String displayProductDetails(String productName) {
         String output = "";
-        output = searchProduct(productName, output);
-        return output;
+        return searchProduct(productName, output);
     }
 
     private String searchProduct(String productName, String output) {

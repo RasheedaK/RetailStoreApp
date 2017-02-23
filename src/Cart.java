@@ -3,7 +3,6 @@ import java.util.List;
 
 public class Cart {
     private final List<Product> items;
-    private boolean empty;
 
     public Cart() {
         items = new ArrayList<>();
