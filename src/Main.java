@@ -7,6 +7,7 @@ public class Main {
         AppRunner appRunner = new AppRunner(retailStoreApp);
         Scanner sc = new Scanner(System.in);
         Menu menu=dependency.setMenu();
+        menu.showOptions();
         while (sc.hasNext()) {
             menu.showOptions();
             appRunner.run(sc.nextInt());
