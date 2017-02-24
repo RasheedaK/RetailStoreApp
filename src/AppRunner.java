@@ -4,6 +4,7 @@ public class AppRunner {
     private static final int ADD_ITEM_TO_CART = 3;
     private static final int REMOVE_ITEM_FROM_CART = 4;
     private static final int VIEW_CART = 5;
+    private static final int EXIT = 6;
     private final RetailStoreApp retailStoreApp;
 
     AppRunner(RetailStoreApp retailStoreApp) {
@@ -26,6 +27,9 @@ public class AppRunner {
             }
             case VIEW_CART: {
                 retailStoreApp.viewCart();
+            }
+            case EXIT: {
+                retailStoreApp.Exit();
             }
         }
 

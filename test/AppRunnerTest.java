@@ -42,4 +42,11 @@ public class AppRunnerTest {
         appRunner.run(5);
         verify(retailStoreApp, times(1)).viewCart();
     }
+    @Test
+    public void shouldCallExitIfUserChoosesToExitTheApp() {
+        RetailStoreApp retailStoreApp = mock(RetailStoreApp.class);
+        AppRunner appRunner = new AppRunner(retailStoreApp);
+        appRunner.run(6);
+        verify(retailStoreApp, times(1)).Exit();
+    }
 }
