@@ -20,12 +20,16 @@ class RetailStoreApp {
         return SUCCESSFULL_ADDITION;
     }
 
-    List<String> displayProducts() {
+    String displayProducts() {
         List<String> productsInStore = new ArrayList<>();
+        String products="";
         for (Category category : Category.values()) {
             productsInStore.add(groupProducts(category));
         }
-        return productsInStore;
+        for (String product:productsInStore) {
+            products+=product+"\n";
+        }
+        return products;
     }
 
     private String groupProducts(Category category) {

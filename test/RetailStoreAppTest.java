@@ -9,10 +9,7 @@ public class RetailStoreAppTest {
     @Test
     public void shouldDisplayAllCategoryWiseProductsOnCallingDisplayProducts() {
         RetailStoreApp retailStoreApp = initializeRetailStore();
-        List<String> products = retailStoreApp.displayProducts();
-        assertEquals(2, products.size());
-        assertEquals("Vacuum Cleaner\nTelevision\n", products.get(0));
-        assertEquals("Chair\nTable\n", products.get(1));
+        assertEquals("Vacuum Cleaner\nTelevision\n\nChair\nTable\n\n", retailStoreApp.displayProducts());
     }
 
     @Test
@@ -74,7 +71,7 @@ public class RetailStoreAppTest {
         RetailStoreApp retailStoreApp = new RetailStoreApp();
         retailStoreApp.addProduct(vacuumCleaner);
         retailStoreApp.addItemToCart(vacuumCleaner);
-        String expectedString = "Vacuum Cleaner";
+        String expectedString = "Vacuum Cleaner\t3400.0\n\n3400.0";
         assertEquals(expectedString, retailStoreApp.viewCart());
     }
 

@@ -15,7 +15,7 @@ class Menu {
     String showOptions() {
         String menuOptions="";
         for (String option:options) {
-            menuOptions+=option;
+            menuOptions+=option+"\n";
         }
         return menuOptions;
     }

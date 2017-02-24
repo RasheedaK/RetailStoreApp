@@ -1,3 +1,5 @@
+import java.util.List;
+
 public class AppRunner {
     private static final int DISPLAY_PRODUCTS = 1;
     private static final int DISPLAY_PRODUCT_DETAILS = 2;
@@ -6,30 +8,38 @@ public class AppRunner {
     private static final int VIEW_CART = 5;
     private static final int EXIT = 6;
     private final RetailStoreApp retailStoreApp;
+    private final OutputConsole outputConsole;
 
-    AppRunner(RetailStoreApp retailStoreApp) {
+    AppRunner(RetailStoreApp retailStoreApp,OutputConsole outputConsole) {
         this.retailStoreApp = retailStoreApp;
+        this.outputConsole = outputConsole;
     }
 
     void run(int userOption) {
         switch (userOption) {
-            case DISPLAY_PRODUCTS: {
-                retailStoreApp.displayProducts();
-            }
+            case 1:
+                outputConsole.print(retailStoreApp.displayProducts());
+                break;
+
             case DISPLAY_PRODUCT_DETAILS: {
-                retailStoreApp.displayProductDetails("Vacuum Cleaner");
+                outputConsole.print(retailStoreApp.displayProductDetails("Vacuum Cleaner"));
+                break;
             }
             case ADD_ITEM_TO_CART: {
-                retailStoreApp.addItemToCart(new Product(Category.ELECTRONICS, "Tv", 20000));
+                outputConsole.print(retailStoreApp.addItemToCart(new Product(Category.ELECTRONICS, "Tv", 20000)));
+                break;
             }
             case REMOVE_ITEM_FROM_CART: {
-                retailStoreApp.removeItemFromCart(new Product(Category.ELECTRONICS, "Tv", 20000));
+                outputConsole.print(retailStoreApp.removeItemFromCart(new Product(Category.ELECTRONICS, "Tv", 20000)));
+                break;
             }
             case VIEW_CART: {
-                retailStoreApp.viewCart();
+                outputConsole.print(retailStoreApp.viewCart());
+                break;
             }
             case EXIT: {
                 retailStoreApp.Exit();
+                break;
             }
         }
 
