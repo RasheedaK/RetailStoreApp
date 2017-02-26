@@ -7,10 +7,12 @@ public class AppRunner {
     private static final int EXIT = 6;
     private final RetailStoreApp retailStoreApp;
     private final OutputConsole outputConsole;
+    private final InputConsole inputConsole;
 
-    AppRunner(RetailStoreApp retailStoreApp,OutputConsole outputConsole) {
+    AppRunner(RetailStoreApp retailStoreApp, OutputConsole outputConsole, InputConsole inputConsole) {
         this.retailStoreApp = retailStoreApp;
         this.outputConsole = outputConsole;
+        this.inputConsole = inputConsole;
     }
 
     void run(int userOption) {
@@ -20,15 +22,15 @@ public class AppRunner {
                 break;
 
             case DISPLAY_PRODUCT_DETAILS: {
-                outputConsole.print(retailStoreApp.displayProductDetails("Vacuum Cleaner"));
+                outputConsole.print(retailStoreApp.displayProductDetails(inputConsole.takeInput()));
                 break;
             }
             case ADD_ITEM_TO_CART: {
-                outputConsole.print(retailStoreApp.addItemToCart("Tv"));
+                outputConsole.print(retailStoreApp.addItemToCart(inputConsole.takeInput()));
                 break;
             }
             case REMOVE_ITEM_FROM_CART: {
-                outputConsole.print(retailStoreApp.removeItemFromCart("Tv"));
+                outputConsole.print(retailStoreApp.removeItemFromCart(inputConsole.takeInput()));
                 break;
             }
             case VIEW_CART: {

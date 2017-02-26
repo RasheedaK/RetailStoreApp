@@ -1,4 +1,4 @@
-public class NullProduct implements RetailProduct{
+public class NullProduct implements RetailProduct {
     public String getName() {
         return "No Product";
     }

@@ -1,4 +1,4 @@
-public class Product implements RetailProduct{
+public class Product implements RetailProduct {
     private Category category;
     private String name;
     private double price;

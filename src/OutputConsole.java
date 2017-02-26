@@ -1,5 +1,5 @@
 public class OutputConsole {
-    void print(String output){
+    void print(String output) {
         System.out.println(output);
     }
 }

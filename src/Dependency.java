@@ -9,8 +9,9 @@ class Dependency {
         retailStoreApp.addProduct(new Product(Category.FURNITURE, "Almirah", 5000));
         return retailStoreApp;
     }
-    Menu setMenu(){
-        Menu menu=new Menu();
+
+    Menu setMenu() {
+        Menu menu = new Menu();
         menu.addOption("Display Products");
         menu.addOption("Display Product Details");
         menu.addOption("Add Item To Cart");

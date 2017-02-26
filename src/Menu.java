@@ -5,7 +5,7 @@ class Menu {
     List<String> options;
 
     Menu() {
-        options=new ArrayList<>();
+        options = new ArrayList<>();
     }
 
     void addOption(String option) {
@@ -13,9 +13,9 @@ class Menu {
     }
 
     String showOptions() {
-        String menuOptions="";
-        for (String option:options) {
-            menuOptions+=option+"\n";
+        String menuOptions = "";
+        for (String option : options) {
+            menuOptions += option + "\n";
         }
         return menuOptions;
     }

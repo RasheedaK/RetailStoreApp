@@ -22,12 +22,12 @@ class RetailStoreApp {
 
     String displayProducts() {
         List<String> productsInStore = new ArrayList<>();
-        String products="";
+        String products = "";
         for (Category category : Category.values()) {
             productsInStore.add(groupProducts(category));
         }
-        for (String product:productsInStore) {
-            products+=product+"\n";
+        for (String product : productsInStore) {
+            products += product + "\n";
         }
         return products;
     }
@@ -56,8 +56,8 @@ class RetailStoreApp {
     }
 
     String addItemToCart(String productName) {
-        RetailProduct result=searchProduct(productName);
-        if(!(result instanceof NullProduct)) {
+        RetailProduct result = searchProduct(productName);
+        if (!(result instanceof NullProduct)) {
             cart.addItem(result);
             return SUCCESSFULL_ADDITION_TO_CART;
         }
@@ -65,7 +65,7 @@ class RetailStoreApp {
     }
 
     String removeItemFromCart(String productName) {
-        RetailProduct result=searchProduct(productName);
+        RetailProduct result = searchProduct(productName);
         if (cart.hasProduct(result)) {
             cart.removeItem(result);
             return SUCCESSFULL_REMOVAL_FROM_CART;
