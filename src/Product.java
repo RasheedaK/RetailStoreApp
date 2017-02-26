@@ -1,4 +1,4 @@
-public class Product {
+public class Product implements RetailProduct{
     private Category category;
     private String name;
     private double price;
@@ -9,19 +9,19 @@ public class Product {
         this.price = price;
     }
 
-    String getName() {
+    public String getName() {
         return name;
     }
 
-    String getDetails() {
+    public String getDetails() {
         return "Category:" + category + "\nName:" + name + "\nPrice:" + price;
     }
 
-    double getPrice() {
+    public double getPrice() {
         return this.price;
     }
 
-    boolean isSameCategory(Category category) {
+    public boolean isSameCategory(Category category) {
         return this.category.equals(category);
     }
 
@@ -46,3 +46,4 @@ public class Product {
         return result;
     }
 }
+

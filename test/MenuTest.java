@@ -5,7 +5,7 @@ public class MenuTest {
     @Test
     public void shouldAddMenuOptionOnCallingAddOption() {
         Menu menu=new Menu();
-        menu.addOption("1. View Products\n");
-        assertEquals("1. View Products",menu.showOptions());
+        menu.addOption("1. View Products");
+        assertEquals("1. View Products\n",menu.showOptions());
     }
 }

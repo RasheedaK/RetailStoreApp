@@ -1,5 +1,3 @@
-import java.util.List;
-
 public class AppRunner {
     private static final int DISPLAY_PRODUCTS = 1;
     private static final int DISPLAY_PRODUCT_DETAILS = 2;
@@ -17,7 +15,7 @@ public class AppRunner {
 
     void run(int userOption) {
         switch (userOption) {
-            case 1:
+            case DISPLAY_PRODUCTS:
                 outputConsole.print(retailStoreApp.displayProducts());
                 break;
 
