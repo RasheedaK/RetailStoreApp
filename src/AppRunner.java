@@ -1,10 +1,5 @@
 public class AppRunner {
-    private static final int DISPLAY_PRODUCTS = 1;
-    private static final int DISPLAY_PRODUCT_DETAILS = 2;
-    private static final int ADD_ITEM_TO_CART = 3;
-    private static final int REMOVE_ITEM_FROM_CART = 4;
-    private static final int VIEW_CART = 5;
-    private static final int EXIT = 6;
+
     private final RetailStoreApp retailStoreApp;
     private final OutputConsole outputConsole;
     private final InputConsole inputConsole;
@@ -17,27 +12,27 @@ public class AppRunner {
 
     void run(int userOption) {
         switch (userOption) {
-            case DISPLAY_PRODUCTS:
+            case StringConstants.DISPLAY_PRODUCTS:
                 outputConsole.print(retailStoreApp.displayProducts());
                 break;
 
-            case DISPLAY_PRODUCT_DETAILS: {
+            case StringConstants.DISPLAY_PRODUCT_DETAILS: {
                 outputConsole.print(retailStoreApp.displayProductDetails(inputConsole.takeInput()));
                 break;
             }
-            case ADD_ITEM_TO_CART: {
+            case StringConstants.ADD_ITEM_TO_CART: {
                 outputConsole.print(retailStoreApp.addItemToCart(inputConsole.takeInput()));
                 break;
             }
-            case REMOVE_ITEM_FROM_CART: {
+            case StringConstants.REMOVE_ITEM_FROM_CART: {
                 outputConsole.print(retailStoreApp.removeItemFromCart(inputConsole.takeInput()));
                 break;
             }
-            case VIEW_CART: {
+            case StringConstants.VIEW_CART: {
                 outputConsole.print(retailStoreApp.viewCart());
                 break;
             }
-            case EXIT: {
+            case StringConstants.EXIT: {
                 retailStoreApp.Exit();
                 break;
             }

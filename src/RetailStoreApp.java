@@ -4,11 +4,6 @@ import java.util.List;
 class RetailStoreApp {
     private Cart cart;
     private List<Product> products;
-    private final String SUCCESSFULL_ADDITION = "Successfully Added To Store";
-    private final String SUCCESSFULL_ADDITION_TO_CART = "Item Successfully Added to Cart";
-    private final String SUCCESSFULL_REMOVAL_FROM_CART = "Item Successfully Removed";
-    private final String PRODUCT_NOT_FOUND = "Product Not Found";
-    private final String PRODUCT_NOT_IN_CART = "Item Not found in cart";
 
     RetailStoreApp() {
         this.products = new ArrayList<>();
@@ -17,7 +12,7 @@ class RetailStoreApp {
 
     String addProduct(Product product) {
         products.add(product);
-        return SUCCESSFULL_ADDITION;
+        return StringConstants.SUCCESSFULL_ADDITION;
     }
 
     String displayProducts() {
@@ -59,18 +54,18 @@ class RetailStoreApp {
         RetailProduct result = searchProduct(productName);
         if (!(result instanceof NullProduct)) {
             cart.addItem(result);
-            return SUCCESSFULL_ADDITION_TO_CART;
+            return StringConstants.SUCCESSFULL_ADDITION_TO_CART;
         }
-        return PRODUCT_NOT_FOUND;
+        return StringConstants.PRODUCT_NOT_FOUND;
     }
 
     String removeItemFromCart(String productName) {
         RetailProduct result = searchProduct(productName);
         if (cart.hasProduct(result)) {
             cart.removeItem(result);
-            return SUCCESSFULL_REMOVAL_FROM_CART;
+            return StringConstants.SUCCESSFULL_REMOVAL_FROM_CART;
         }
-        return PRODUCT_NOT_IN_CART;
+        return StringConstants.PRODUCT_NOT_IN_CART;
     }
 
     String viewCart() {
