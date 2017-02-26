@@ -24,7 +24,7 @@ public class AppRunner {
                 break;
             }
             case ADD_ITEM_TO_CART: {
-                outputConsole.print(retailStoreApp.addItemToCart(new Product(Category.ELECTRONICS, "Tv", 20000)));
+                outputConsole.print(retailStoreApp.addItemToCart("Tv"));
                 break;
             }
             case REMOVE_ITEM_FROM_CART: {

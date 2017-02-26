@@ -28,7 +28,7 @@ public class AppRunnerTest {
         OutputConsole outputConsole=mock(OutputConsole.class);
         AppRunner appRunner = new AppRunner(retailStoreApp,outputConsole);
         appRunner.run(3);
-        verify(retailStoreApp, times(1)).addItemToCart(isA(Product.class));
+        verify(retailStoreApp, times(1)).addItemToCart(anyString());
         verify(outputConsole,times(1)).print(anyString());
 
     }

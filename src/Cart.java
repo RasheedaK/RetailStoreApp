@@ -2,14 +2,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Cart {
-    private final List<Product> items;
+    private final List<RetailProduct> items;
     private final String EMPTY_CART = "Cart Is Empty";
 
     public Cart() {
         items = new ArrayList<>();
     }
 
-    void addItem(Product product) {
+    void addItem(RetailProduct product) {
         items.add(product);
     }
 
@@ -19,7 +19,7 @@ public class Cart {
 
     double getTotalPrice() {
         int sum = 0;
-        for (Product product : items) {
+        for (RetailProduct product : items) {
             sum += product.getPrice();
         }
         return sum;
@@ -28,7 +28,7 @@ public class Cart {
     String showItems() {
         String addedItems = "";
         if (!isEmpty()) {
-            for (Product product : items) {
+            for (RetailProduct product : items) {
                 addedItems += product.getName() + "\t" + product.getPrice() + "\n";
             }
         } else

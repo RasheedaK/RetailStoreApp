@@ -55,16 +55,13 @@ class RetailStoreApp {
         return new NullProduct();
     }
 
-    String addItemToCart(Product product) {
-        if (hasProduct(product)) {
-            cart.addItem(product);
+    String addItemToCart(String productName) {
+        RetailProduct result=searchProduct(productName);
+        if(!(result instanceof NullProduct)) {
+            cart.addItem(result);
             return SUCCESSFULL_ADDITION_TO_CART;
         }
         return PRODUCT_NOT_FOUND;
-    }
-
-    private boolean hasProduct(Product product) {
-        return products.contains(product);
     }
 
     String removeItemFromCart(Product product) {
