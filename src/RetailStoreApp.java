@@ -43,16 +43,16 @@ class RetailStoreApp {
     }
 
     String displayProductDetails(String productName) {
-        return searchProduct(productName);
+        return searchProduct(productName).getDetails();
     }
 
-    private String searchProduct(String productName) {
+    private RetailProduct searchProduct(String productName) {
         for (Product product : products) {
             if (product.getName().equalsIgnoreCase(productName)) {
-                return product.getDetails();
+                return product;
             }
         }
-        return PRODUCT_NOT_FOUND;
+        return new NullProduct();
     }
 
     String addItemToCart(Product product) {
