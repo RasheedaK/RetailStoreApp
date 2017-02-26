@@ -52,16 +52,16 @@ public class RetailStoreAppTest {
         RetailStoreApp retailStoreApp = new RetailStoreApp();
         retailStoreApp.addProduct(vacuumCleaner);
         retailStoreApp.addItemToCart("Vacuum Cleaner");
-        String actualString = retailStoreApp.removeItemFromCart(vacuumCleaner);
+        String actualString = retailStoreApp.removeItemFromCart("Vacuum Cleaner");
         assertEquals("Item Successfully Removed", actualString);
     }
 
     @Test
     public void shouldNotDisplaySuccessfulMessageOnCallingDeleteItemFromCartIfItemIsNotAdded() {
-        Product vaccumCleaner = new Product(Category.ELECTRONICS, "Vaccum Cleaner", 3400);
+        Product vaccumCleaner = new Product(Category.ELECTRONICS, "Vacuum Cleaner", 3400);
         RetailStoreApp retailStoreApp = new RetailStoreApp();
         retailStoreApp.addProduct(vaccumCleaner);
-        String actualString = retailStoreApp.removeItemFromCart(vaccumCleaner);
+        String actualString = retailStoreApp.removeItemFromCart("Vacuum Cleaner");
         assertNotEquals("Item Successfully Removed", actualString);
     }
 

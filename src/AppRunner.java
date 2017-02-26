@@ -28,7 +28,7 @@ public class AppRunner {
                 break;
             }
             case REMOVE_ITEM_FROM_CART: {
-                outputConsole.print(retailStoreApp.removeItemFromCart(new Product(Category.ELECTRONICS, "Tv", 20000)));
+                outputConsole.print(retailStoreApp.removeItemFromCart("Tv"));
                 break;
             }
             case VIEW_CART: {

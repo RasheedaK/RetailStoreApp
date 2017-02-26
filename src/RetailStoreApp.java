@@ -64,9 +64,10 @@ class RetailStoreApp {
         return PRODUCT_NOT_FOUND;
     }
 
-    String removeItemFromCart(Product product) {
-        if (cart.hasProduct(product)) {
-            cart.removeItem(product);
+    String removeItemFromCart(String productName) {
+        RetailProduct result=searchProduct(productName);
+        if (cart.hasProduct(result)) {
+            cart.removeItem(result);
             return SUCCESSFULL_REMOVAL_FROM_CART;
         }
         return PRODUCT_NOT_IN_CART;

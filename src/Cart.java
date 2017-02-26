@@ -13,7 +13,7 @@ public class Cart {
         items.add(product);
     }
 
-    void removeItem(Product product) {
+    void removeItem(RetailProduct product) {
         items.remove(product);
     }
 
@@ -36,7 +36,7 @@ public class Cart {
         return addedItems;
     }
 
-    boolean hasProduct(Product product) {
+    boolean hasProduct(RetailProduct product) {
         return items.contains(product);
     }
 
