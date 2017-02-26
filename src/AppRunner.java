@@ -12,19 +12,22 @@ public class AppRunner {
 
     void run(int userOption) {
         switch (userOption) {
-            case StringConstants.DISPLAY_PRODUCTS:
+            case StringConstants.DISPLAY_PRODUCTS: {
                 outputConsole.print(retailStoreApp.displayProducts());
                 break;
-
+            }
             case StringConstants.DISPLAY_PRODUCT_DETAILS: {
+                outputConsole.print(StringConstants.USER_MESSAGE);
                 outputConsole.print(retailStoreApp.displayProductDetails(inputConsole.takeInput()));
                 break;
             }
             case StringConstants.ADD_ITEM_TO_CART: {
+                outputConsole.print(StringConstants.USER_MESSAGE);
                 outputConsole.print(retailStoreApp.addItemToCart(inputConsole.takeInput()));
                 break;
             }
             case StringConstants.REMOVE_ITEM_FROM_CART: {
+                outputConsole.print(StringConstants.USER_MESSAGE);
                 outputConsole.print(retailStoreApp.removeItemFromCart(inputConsole.takeInput()));
                 break;
             }

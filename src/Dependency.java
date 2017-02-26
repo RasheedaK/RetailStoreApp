@@ -12,12 +12,12 @@ class Dependency {
 
     Menu setMenu() {
         Menu menu = new Menu();
-        menu.addOption("Display Products");
-        menu.addOption("Display Product Details");
-        menu.addOption("Add Item To Cart");
-        menu.addOption("Remove Item From Cart");
-        menu.addOption("View Cart");
-        menu.addOption("Exit");
+        menu.addOption("1. Display Products");
+        menu.addOption("2. Display Product Details");
+        menu.addOption("3. Add Item To Cart");
+        menu.addOption("4. Remove Item From Cart");
+        menu.addOption("5. View Cart");
+        menu.addOption("6. Exit");
         return menu;
     }
 }

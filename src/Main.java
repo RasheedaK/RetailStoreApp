@@ -14,6 +14,6 @@ public class Main {
             outputConsole.print(menu.showOptions());
             userOption = sc.nextInt();
             appRunner.run(userOption);
-        } while (userOption != 6);
+        } while (userOption != StringConstants.EXIT);
     }
 }

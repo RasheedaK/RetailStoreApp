@@ -14,7 +14,7 @@ public class Product implements RetailProduct {
     }
 
     public String getDetails() {
-        return "Category:" + category + "\nName:" + name + "\nPrice:" + price;
+        return "Category:" + category + "\nName:" + name + "\nPrice:" + price+"\n";
     }
 
     public double getPrice() {
