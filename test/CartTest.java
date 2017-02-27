@@ -24,7 +24,7 @@ public class CartTest {
         Product vacuumCleaner = new Product(Category.ELECTRONICS, "VacuumCleaner", 2300);
         Cart cart = new Cart();
         cart.addItem(vacuumCleaner);
-        String expectedString = "VacuumCleaner\t2300.0\n";
+        String expectedString = "VacuumCleaner\t2300.0";
         assertEquals(expectedString, cart.showItems());
     }
 

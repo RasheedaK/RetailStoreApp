@@ -23,7 +23,7 @@ public class AppRunnerTest {
         appRunner.run(2);
         verify(inputConsole, times(1)).takeInput();
         verify(retailStoreApp, times(1)).displayProductDetails(anyString());
-        verify(outputConsole, times(1)).print(anyString());
+        verify(outputConsole, times(2)).print(anyString());
     }
 
     @Test
@@ -35,7 +35,7 @@ public class AppRunnerTest {
         appRunner.run(3);
         verify(inputConsole, times(1)).takeInput();
         verify(retailStoreApp, times(1)).addItemToCart(anyString());
-        verify(outputConsole, times(1)).print(anyString());
+        verify(outputConsole, times(2)).print(anyString());
 
     }
 
@@ -48,8 +48,7 @@ public class AppRunnerTest {
         appRunner.run(4);
         verify(inputConsole, times(1)).takeInput();
         verify(retailStoreApp, times(1)).removeItemFromCart(anyString());
-        verify(outputConsole, times(1)).print(anyString());
-
+        verify(outputConsole, times(2)).print(anyString());
     }
 
     @Test
@@ -61,6 +60,7 @@ public class AppRunnerTest {
 
         appRunner.run(5);
         verify(retailStoreApp, times(1)).viewCart();
+        verify(outputConsole,times(1)).print(anyString());
     }
 
     @Test

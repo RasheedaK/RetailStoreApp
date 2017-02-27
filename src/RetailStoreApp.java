@@ -38,7 +38,7 @@ class RetailStoreApp {
     }
 
     String displayProductDetails(String productName) {
-        return searchProduct(productName).getDetails();
+        return searchProduct(productName).toString();
     }
 
     private RetailProduct searchProduct(String productName) {
@@ -73,6 +73,6 @@ class RetailStoreApp {
     }
 
     void Exit() {
-        System.exit(1);
+        System.exit(0);
     }
 }

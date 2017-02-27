@@ -6,8 +6,8 @@ public class ProductTest {
     @Test
     public void shouldReturnProductDetailsOnCallingGetDetails() {
         Product vacuumCleaner = new Product(Category.ELECTRONICS, "Vaccum Cleaner", 3400);
-        String expectedString = "Category:ELECTRONICS\nName:Vaccum Cleaner\nPrice:3400.0";
-        assertEquals(expectedString, vacuumCleaner.getDetails());
+        String expectedString = "Category:ELECTRONICS\nName:Vaccum Cleaner\nPrice:3400.0\n";
+        assertEquals(expectedString, vacuumCleaner.toString());
     }
 
     @Test

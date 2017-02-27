@@ -3,7 +3,8 @@ public class NullProduct implements RetailProduct {
         return "No Product";
     }
 
-    public String getDetails() {
+    @Override
+    public String toString() {
         return "Product Not Found";
     }
 

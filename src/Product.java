@@ -13,7 +13,8 @@ public class Product implements RetailProduct {
         return name;
     }
 
-    public String getDetails() {
+    @Override
+    public String toString() {
         return "Category:" + category + "\nName:" + name + "\nPrice:" + price+"\n";
     }
 
