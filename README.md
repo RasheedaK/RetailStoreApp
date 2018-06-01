@@ -1,5 +1,5 @@
 A retail store is trying to come up with a mobile app for its customers that can help customers browse products and create a cart with products that they wish to purchase.<br/>
-List of products should be available in the app. The products available in app are:<br/>
+List of products should be available in the app. The products available in the store app are:<br/>
      Product-Category<br/>
      Microwave oven        -Electronics<br/>
      Television            -Electronics<br/>
