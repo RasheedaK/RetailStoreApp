@@ -7,6 +7,7 @@ List of products should be available in the app. The products available in the s
      Table                  -Furniture<br/>
      Chair                  -Furniture<br/>
      Almirah                -Furniture<br/>
+     Dining Table           -Furniture<br/>
 As part of initial release, the app should have the following features:<br/>
 1. User should be able to view list of products grouped by categories.<br/>
 2. User should be able to view details by selecting a product from list.<br/>
